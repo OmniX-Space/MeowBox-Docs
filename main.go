@@ -1,3 +1,10 @@
+/*
+ * The simplest web service
+ * Created by MoeCinnamo on 2025/11/26.
+ *
+ * This is a simple web service that serves static files from the "docs" directory.
+ */
+
 package main
 
 import (
@@ -138,6 +145,7 @@ func route() {
 	http.HandleFunc("/font-awesome/", staticFileHandler)
 	http.HandleFunc("/js/", staticFileHandler)
 	http.HandleFunc("/img/", staticFileHandler)
+	http.HandleFunc("/markdown/", staticFileHandler)
 }
 
 func getContentType(filename string) string {

@@ -1,0 +1,134 @@
+.container-404 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-404 i {
+    position: absolute;
+    font-size: 256px;
+    color: #000;
+    left: 32px;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.right-container-404 {
+    position: absolute;
+    width: calc(100% - 416px);
+    right: 32px;
+    text-align: center;
+}
+
+.right-container-404 h1,
+.right-container-404 p {
+    padding: 8px;
+}
+
+.go-home-button {
+    height: 48px;
+    width: 210px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0.1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.go-home-button i {
+    font-size: 18px;
+    left: 12px;
+    bottom: 14px;
+    animation: none;
+}
+
+.go-home-button .go-home-button-text {
+    position: absolute;
+    right: 12px;
+    bottom: 11px;
+    font-size: 18px;
+}
+
+.go-home-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.go-home-button:active {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.lang-select-404 {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.lang-select-404 select {
+    outline: none;
+    border: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    backdrop-filter: blur(3px);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 4px 24px 12px 10px;
+    width: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    background-image: none;
+    position: relative;
+    z-index: 1;
+}
+
+.lang-select-404 select::-ms-expand {
+    display: none;
+}
+
+.lang-select-404::after {
+    content: "\f1ab";
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+    position: absolute;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #000;
+    pointer-events: none;
+    margin-top: 16px;
+    margin-left: -28px;
+    z-index: 1;
+}
+
+.lang-select-404 select:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.lang-select-404 select:active {
+    background-color: rgba(255, 255, 255, 0.6);
+}
