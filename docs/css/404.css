@@ -59,6 +59,7 @@
 }
 
 .go-home-button i {
+    position: absolute;
     font-size: 18px;
     left: 12px;
     bottom: 14px;
@@ -131,4 +132,38 @@
 
 .lang-select-404 select:active {
     background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+    .container-404 {
+        width: 90%;
+        height: 95%;
+    }
+
+    .container-404 i {
+        font-size: 128px;
+        left: auto;
+        top: 64px;
+        animation: rotate 2s linear infinite;
+    }
+
+    .right-container-404 {
+        width: 100%;
+        height: calc(100% - 256px);
+        right: 0;
+        bottom: 32px;
+    }
+
+    .go-home-button i {
+        font-size: 18px;
+        left: 12px;
+        top: 14px;
+        animation: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-404 {
+        width: 95%;
+    }
 }
