@@ -1,0 +1,3 @@
+[submodule "docs/js/markbb"]
+	path = docs/js/markbb
+	url = https://github.com/OmniX-Space/markbb.git
