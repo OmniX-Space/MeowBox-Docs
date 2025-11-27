@@ -68,9 +68,7 @@ func staticFileHandler(w http.ResponseWriter, r *http.Request) {
 	// Clean path, make sure it starts with "docs/"
 	path = strings.TrimPrefix(path, "/")
 	if path == "" {
-		if err := notFoundTemplate.Execute(w, ""); err != nil {
-			log.Printf("[Error] Failed to render error page: %v", err)
-		}
+		notFoundHandler(w, r)
 		return
 	}
 
@@ -79,9 +77,7 @@ func staticFileHandler(w http.ResponseWriter, r *http.Request) {
 	data, err := webFiles.ReadFile(filePath)
 	if err != nil {
 		log.Printf("[Error] Static file not found: %s", filePath)
-		if err := notFoundTemplate.Execute(w, ""); err != nil {
-			log.Printf("[Error] Failed to render error page: %v", err)
-		}
+		notFoundHandler(w, r)
 		return
 	}
 
