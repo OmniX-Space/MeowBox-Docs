@@ -28,7 +28,9 @@ function load404Page() {
     buttonText.textContent = translations["404_Go_Home"];
     button.appendChild(buttonText);
     button.addEventListener("click", () => {
+        window.location.hash = "";
         window.location.href = "/";
+        window.location.reload();
     });
     rightContainer.appendChild(button);
     const langSelect = document.createElement("div");
@@ -55,48 +57,3 @@ function load404Page() {
     container.appendChild(rightContainer);
     page.appendChild(container);
 }
-
-// Load layout script
-function loadLayoutScript404() {
-    return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = "/js/layout.js";
-        script.async = true;
-
-        script.onload = () => {
-            resolve();
-            script.remove();
-        };
-
-        script.onerror = () => {
-            const errorMsg = `Failed to load script: ${scriptUrl}`;
-            console.error(`[ScriptLoader] ${errorMsg}`);
-            reject(new Error(errorMsg));
-        };
-
-        document.body.appendChild(script);
-    });
-}
-
-// Initialize app
-async function initializeApp() {
-    try {
-        await Promise.all([
-            loadLayoutScript404()
-        ]);
-        await Promise.all([
-            loadScript("/js/i18n.js"),
-            loadCSSAsPromise("/css/layout.css"),
-            loadCSSAsPromise("/css/404.css"),
-            loadCSSAsPromise("/font-awesome/css/all.min.css")
-        ])
-        createPage();
-        load404Page()
-    } catch (error) {
-        console.error('App initialization error:', error);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    initializeApp();
-});
