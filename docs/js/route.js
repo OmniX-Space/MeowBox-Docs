@@ -13,6 +13,7 @@ function route() {
     if (!currentHash || currentHash === "/") {
         const browserLang = getBrowserLanguage();
         window.location.href = `#/${browserLang}/index.html`;
+        window.location.reload();
         setTimeout(() => {
             isRouting = false;
         }, 50);
